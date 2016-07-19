@@ -789,42 +789,42 @@ JavaScript 可以在 HTML 外部使用。它可在许多其他应用程序中作
 		<th style="width:25%">属性</th><th>描述</th>
 	</tr>
 	<tr> 
-		<td><a href="/jsref/prop_win_closed.asp">closed</a></td><td>返回窗口是否已被关闭。</td>  
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_closed.asp">closed</a></td><td>返回窗口是否已被关闭。</td>  
 	</tr>
 	<tr>
-		<td><a href="/jsref/prop_win_defaultstatus.asp">defaultStatus</a></td><td>设置或返回窗口状态栏中的默认文本。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_defaultstatus.asp">defaultStatus</a></td><td>设置或返回窗口状态栏中的默认文本。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/dom_obj_document.asp">document</a></td><td>对 Document 对象的只读引用。请参阅 <a href="dom_obj_document.asp">Document 对象</a>。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_document.asp">document</a></td><td>对 Document 对象的只读引用。请参阅 <a target="_blank" href="dom_obj_document.asp">Document 对象</a>。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/dom_obj_history.asp">history</a></td><td>对 History 对象的只读引用。请参数 <a href="dom_obj_history.asp">History 对象</a>。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_history.asp">history</a></td><td>对 History 对象的只读引用。请参数 <a target="_blank" href="dom_obj_history.asp">History 对象</a>。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/prop_win_innerheight_innerwidth.asp">innerheight</a></td><td>返回窗口的文档显示区的高度。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_innerheight_innerwidth.asp">innerheight</a></td><td>返回窗口的文档显示区的高度。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/prop_win_innerheight_innerwidth.asp">innerwidth</a></td><td>返回窗口的文档显示区的宽度。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_innerheight_innerwidth.asp">innerwidth</a></td><td>返回窗口的文档显示区的宽度。</td>
 	</tr>
 	<tr><td>length</td><td>设置或返回窗口中的框架数量。</td></tr>
 	<tr>
-		<td><a href="/jsref/dom_obj_location.asp">location</a></td><td>用于窗口或框架的 Location 对象。请参阅 <a href="dom_obj_location.asp">Location 对象</a>。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_location.asp">location</a></td><td>用于窗口或框架的 Location 对象。请参阅 <a target="_blank" href="dom_obj_location.asp">Location 对象</a>。</td>
 	</tr>
-	<tr><td><a href="/jsref/prop_win_name.asp">name</a></td><td>设置或返回窗口的名称。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_name.asp">name</a></td><td>设置或返回窗口的名称。</td></tr>
 	<tr>
-		<td><a href="/jsref/dom_obj_navigator.asp">Navigator</a></td><td>对 Navigator 对象的只读引用。请参数 <a href="/jsref/dom_obj_navigator.asp">Navigator 对象</a>。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_navigator.asp">Navigator</a></td><td>对 Navigator 对象的只读引用。请参数 <a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_navigator.asp">Navigator 对象</a>。</td>
 	</tr>
-	<tr><td><a href="/jsref/prop_win_opener.asp">opener</a></td><td>返回对创建此窗口的窗口的引用。</td></tr>
-	<tr><td><a href="/jsref/prop_win_outerheight.asp">outerheight</a></td> <td>返回窗口的外部高度。</td>  </tr>
-	<tr> <td><a href="/jsref/prop_win_outerwidth.asp">outerwidth</a></td> <td>返回窗口的外部宽度。</td> </tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_opener.asp">opener</a></td><td>返回对创建此窗口的窗口的引用。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_outerheight.asp">outerheight</a></td> <td>返回窗口的外部高度。</td>  </tr>
+	<tr> <td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_outerwidth.asp">outerwidth</a></td> <td>返回窗口的外部宽度。</td> </tr>
 	<tr> <td>pageXOffset</td> <td>设置或返回当前页面相对于窗口显示区左上角的 X 位置。</td> </tr>
 	<tr> <td>pageYOffset</td> <td>设置或返回当前页面相对于窗口显示区左上角的 Y 位置。</td> </tr>
 	<tr> <td>parent</td> <td>返回父窗口。</td></tr>
-	<tr><td><a href="/jsref/dom_obj_screen.asp">Screen</a></td><td>对 Screen 对象的只读引用。请参数 <a href="/jsref/dom_obj_screen.asp">Screen 对象</a>。</td></tr>
-	<tr><td><a href="/jsref/prop_win_self.asp">self</a></td><td>返回对当前窗口的引用。等价于 Window 属性。</td></tr>
-	<tr><td><a href="/jsref/prop_win_status.asp">status</a></td><td>设置窗口状态栏的文本。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_screen.asp">Screen</a></td><td>对 Screen 对象的只读引用。请参数 <a target="_blank" href="http://www.w3school.com.cn/jsref/dom_obj_screen.asp">Screen 对象</a>。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_self.asp">self</a></td><td>返回对当前窗口的引用。等价于 Window 属性。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_status.asp">status</a></td><td>设置窗口状态栏的文本。</td></tr>
 	<tr>
-		<td><a href="/jsref/prop_win_top.asp">top</a></td><td>返回最顶层的先辈窗口。</td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_win_top.asp">top</a></td><td>返回最顶层的先辈窗口。</td>
 	</tr>
 	<tr>
 		<td>window</td><td>window 属性等价于 self 属性，它包含了对窗口自身的引用。</td>
@@ -851,79 +851,79 @@ JavaScript 可以在 HTML 外部使用。它可在许多其他应用程序中作
     <th>描述</th>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_alert.asp">alert()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_alert.asp">alert()</a></td>
     <td>显示带有一段消息和一个确认按钮的警告框。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_blur.asp">blur()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_blur.asp">blur()</a></td>
     <td>把键盘焦点从顶层窗口移开。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_clearinterval.asp">clearInterval()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_clearinterval.asp">clearInterval()</a></td>
     <td>取消由 setInterval() 设置的 timeout。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_cleartimeout.asp">clearTimeout()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_cleartimeout.asp">clearTimeout()</a></td>
     <td>取消由 setTimeout() 方法设置的 timeout。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_close.asp">close()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_close.asp">close()</a></td>
     <td>关闭浏览器窗口。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_confirm.asp">confirm()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_confirm.asp">confirm()</a></td>
     <td>显示带有一段消息以及确认按钮和取消按钮的对话框。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_createpopup.asp">createPopup()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_createpopup.asp">createPopup()</a></td>
     <td>创建一个 pop-up 窗口。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_focus.asp">focus()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_focus.asp">focus()</a></td>
     <td>把键盘焦点给予一个窗口。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_moveby.asp">moveBy()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_moveby.asp">moveBy()</a></td>
     <td>可相对窗口的当前坐标把它移动指定的像素。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_moveto.asp">moveTo()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_moveto.asp">moveTo()</a></td>
     <td>把窗口的左上角移动到一个指定的坐标。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_open.asp">open()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_open.asp">open()</a></td>
     <td>打开一个新的浏览器窗口或查找一个已命名的窗口。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_print.asp">print()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_print.asp">print()</a></td>
     <td>打印当前窗口的内容。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_prompt.asp">prompt()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_prompt.asp">prompt()</a></td>
     <td>显示可提示用户输入的对话框。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_resizeby.asp">resizeBy()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_resizeby.asp">resizeBy()</a></td>
     <td>按照指定的像素调整窗口的大小。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_resizeto.asp">resizeTo()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_resizeto.asp">resizeTo()</a></td>
     <td>把窗口的大小调整到指定的宽度和高度。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_scrollby.asp">scrollBy()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_scrollby.asp">scrollBy()</a></td>
     <td>按照指定的像素值来滚动内容。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_scrollto.asp">scrollTo()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_scrollto.asp">scrollTo()</a></td>
     <td>把内容滚动到指定的坐标。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_setinterval.asp">setInterval()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_setinterval.asp">setInterval()</a></td>
     <td>按照指定的周期（以毫秒计）来调用函数或计算表达式。</td>
   </tr>
   <tr>
-    <td><a href="/jsref/met_win_settimeout.asp">setTimeout()</a></td>
+    <td><a target="_blank" href="http://www.w3school.com.cn/jsref/met_win_settimeout.asp">setTimeout()</a></td>
     <td>在指定的毫秒数后调用函数或计算表达式。</td>
   </tr>
 </tbody></table>
@@ -967,25 +967,25 @@ JavaScript 可以在 HTML 外部使用。它可在许多其他应用程序中作
 
 <table class="dataintable">
 	<tr><th style="width:30%">属性</th><th>描述</th></tr>
-	<tr><td><a href="/jsref/prop_nav_appcodename.asp">appCodeName</a></td><td>返回浏览器的代码名。</td></tr>
-	<tr><td><a href="/jsref/prop_nav_appminorversion.asp">appMinorVersion</a></td><td>返回浏览器的次级版本。</td>	</tr>
-	<tr><td><a href="/jsref/prop_nav_appname.asp">appName</a></td><td>返回浏览器的名称。</td></tr>
-	<tr><td><a href="/jsref/prop_nav_appversion.asp">appVersion</a></td><td>返回浏览器的平台和版本信息。</td></tr>
-	<tr><td><a href="/jsref/prop_nav_browserlanguage.asp">browserLanguage</a></td><td>返回当前浏览器的语言。</td>	</tr>
-	<tr><td><a href="/jsref/prop_nav_cookieenabled.asp">cookieEnabled</a></td><td>返回指明浏览器中是否启用 cookie 的布尔值。</td></tr>
-	<tr><td><a href="/jsref/prop_nav_cpuclass.asp">cpuClass</a></td><td>返回浏览器系统的 CPU 等级。</td></tr>
-	<tr><td><a href="/jsref/prop_nav_online.asp">onLine</a></td><td>返回指明系统是否处于脱机模式的布尔值。</td>	</tr>
-	<tr><td><a href="/jsref/prop_nav_platform.asp">platform</a></td><td>返回运行浏览器的操作系统平台。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_appcodename.asp">appCodeName</a></td><td>返回浏览器的代码名。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_appminorversion.asp">appMinorVersion</a></td><td>返回浏览器的次级版本。</td>	</tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_appname.asp">appName</a></td><td>返回浏览器的名称。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_appversion.asp">appVersion</a></td><td>返回浏览器的平台和版本信息。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_browserlanguage.asp">browserLanguage</a></td><td>返回当前浏览器的语言。</td>	</tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_cookieenabled.asp">cookieEnabled</a></td><td>返回指明浏览器中是否启用 cookie 的布尔值。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_cpuclass.asp">cpuClass</a></td><td>返回浏览器系统的 CPU 等级。</td></tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_online.asp">onLine</a></td><td>返回指明系统是否处于脱机模式的布尔值。</td>	</tr>
+	<tr><td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_platform.asp">platform</a></td><td>返回运行浏览器的操作系统平台。</td></tr>
 	<tr>
-		<td><a href="/jsref/prop_nav_systemlanguage.asp">systemLanguage</a></td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_systemlanguage.asp">systemLanguage</a></td>
 		<td>返回 OS 使用的默认语言。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/prop_nav_useragent.asp">userAgent</a></td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_useragent.asp">userAgent</a></td>
 		<td>返回由客户机发送服务器的 user-agent 头部的值。</td>
 	</tr>
 	<tr>
-		<td><a href="/jsref/prop_nav_userlanguage.asp">userLanguage</a></td>
+		<td><a target="_blank" href="http://www.w3school.com.cn/jsref/prop_nav_userlanguage.asp">userLanguage</a></td>
 		<td>返回 OS 的自然语言设置。</td>
 	</tr>
 </table>
