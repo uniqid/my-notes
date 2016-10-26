@@ -160,7 +160,7 @@
 
 * JavaScript 数据类型
 
-> 在 JavaScript 中有 7 中不同的数据类型
+> 在 JavaScript 中有 7 种不同的数据类型
 
 >     string
 >     number
@@ -285,7 +285,7 @@
 >      string.split();           //整个字符串作为数组元素
 >      string.split("");         //每个字符作为数组元素
 
-> regexp.compile(patt);          //直接赋值不好吗？这玩意似乎略显多余？？？
+> regexp.compile(patt[, flags]); //比直接赋值效率高？？？，flags是修正符：g、i、m
 
     注意：当使用构造函数创造正则对象时，需要常规的字符转义规则（在前面加反斜杠 \）。比如，以下是等价的：
 
