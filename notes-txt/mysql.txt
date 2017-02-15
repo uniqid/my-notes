@@ -1,0 +1,252 @@
+mysql -h host -u user -p  database
+eg. mysql -h localhost -uroot -p test
+
+select version(), user(), database(), current_date, curdate(), now();
+
+select timestampdiff(year,  '2008-01-01', curdate()) as year;
+select timestampdiff(month, '2008-01-01', curdate()) as month;
+select timestampdiff(day,   '2008-01-01', curdate()) as day;
+
+select year("2016-08-31"), month("2016-08-31"), day("2016-08-31");
+select mod(1,2), mod(2,2), mod(3,2), mod(4,2), mod(5,2);
+select sum(field) as f_sum, max(field) as f_max, avg(field) as f_avg from tbname;
+
+show databases;
+use  database;
+show tables;
+desc[ribe] table;
+
+create database if not exists dbname default charset utf8 collate utf8_general_ci;
+
+show create database dbname;
+
+create table if not exists `tbname` (
+    `id` int(10) not null auto_increment comment 'id comment',
+    primary key (`id`)
+) engine=innodb default charset=utf8 comment='table comment';
+
+show create table tbname;
+
+create table pet (
+    id int(10) not null auto_increment,
+    name varchar(20), owner varchar(20),
+    species varchar(20), 
+    sex char(1), 
+    birth date, 
+    death date,
+    primary key(id)
+);
+
+pet_data.txt content as follows:
+
+\N	Fluffy	Harold	cat	f	1993-02-04	 \N
+\N	Claws	Gwen	cat	m	1994-03-17	 \N
+\N	Buffy	Harold	dog	f	1989-05-13	 \N
+\N	Fang	Benny	dog	m	1990-08-27	 \N
+\N	Bowser	Diane	dog	m	1979-08-31	1995-07-29
+\N	Chirpy	Gwen	bird	f	1998-09-11	 \N
+\N	Whistler	Gwen	bird	 \N	1997-12-09	\N 
+\N	Slim	Benny	snake	m	1996-04-29	 \N
+
+
+load data local infile "/path/to/pet_data.txt" into table pet;
+load data local infile "/path/to/pet_data.txt" into table pet lines terminated by '\n';
+load data local infile "/path/to/pet_data.txt" into table pet lines terminated by '\r\n';
+load data infile '/local/access_log' into table tbl_name fields terminated by ',' optionally enclosed by '"' escaped by '\\';
+
+
+alter table pet auto_increment=168;
+
+SELECT 1 IS NULL, 1 IS NOT NULL;
++-----------+---------------+
+| 1 IS NULL | 1 IS NOT NULL |
++-----------+---------------+
+|         0 |             1 |
++-----------+---------------+
+
+SELECT 1 = NULL, 1 <> NULL, 1 < NULL, 1 > NULL;
++----------+-----------+----------+----------+
+| 1 = NULL | 1 <> NULL | 1 < NULL | 1 > NULL |
++----------+-----------+----------+----------+
+|     NULL |      NULL |     NULL |     NULL |
++----------+-----------+----------+----------+
+
+SELECT 0 IS NULL, 0 IS NOT NULL, '' IS NULL, '' IS NOT NULL;
++-----------+---------------+------------+----------------+
+| 0 IS NULL | 0 IS NOT NULL | '' IS NULL | '' IS NOT NULL |
++-----------+---------------+------------+----------------+
+|         0 |             1 |          0 |              1 |
++-----------+---------------+------------+----------------+
+
+select * from pet where length(name) = 5;
+select * from pet where name like '_____';
+
+select * from pet where name regexp '^.....$';
+select * from pet where name regexp '^.{5}$';
+select * from pet where name rlike  '^.....$';
+select * from pet where name rlike  '^.{5}$';
+
+*regexp and rlike are synonyms
+
+select species, count(*) from pet group by species;
+
+*count doesn't count null values, 
+*so if you are counting values by a field that has null values, 
+*that rows won't be counted by count.
+
+
+mysql -hlocalhost -uroot -p dbname     < "/path/to/sql.txt"
+mysql -hlocalhost -uroot -p dbname  -t < "/path/to/sql.txt"
+mysql -hlocalhost -uroot -p dbname  -e "source /path/to/sql.txt"
+
+*If you want to get the interactive output format in batch mode, use mysql -t. 
+*To echo to the output the statements that are executed, use mysql -v. 
+
+mysql -hlocalhost -uroot -p dbname  -t -v < "/path/to/sql.txt"
+
+mysql < batch-file | more
+mysql < batch-file > mysql.out
+
+Othewise:
+mysql> source filename;
+mysql> \. filename
+
+
+***********************************************************************************************************************
+***********************************************************************************************************************
+From: http://stackoverflow.com/questions/426731/min-max-vs-order-by-and-limit
+
+Out of the following queries, which method would you consider the better one? 
+What are your reasons (code efficiency, better maintainability, less WTFery)...
+
+SELECT MIN(`field`) FROM `tbl`;
+SELECT `field` FROM `tbl` ORDER BY `field` LIMIT 1;
+
+In the worst case, where you're looking at an unindexed field, 
+using MIN() requires a single full pass of the table. 
+Using SORT and LIMIT requires a filesort. 
+If run against a large table, 
+there would likely be a significant difference in percieved performance. 
+As a meaningless data point, MIN() took .36s while SORT and LIMIT took .84s against a 106,000 row table on my dev server.
+
+If, however, you're looking at an indexed column, 
+the difference is harder to notice (meaningless data point is 0.00s in both cases). 
+Looking at the output of explain, however, 
+it looks like MIN() is able to simply pluck the smallest value 
+from the index ('Select tables optimized away' and 'NULL' rows) 
+whereas the SORT and LIMIT still needs needs to do an ordered traversal of the index (106,000 rows). 
+The actual performance impact is probably negligible.
+
+It looks like MIN() is the way to go - it's faster in the worst case, 
+indistinguishable in the best case, is standard SQL and 
+most clearly expresses the value you're trying to get. 
+The only case where it seems that using SORT and LIMIT would be desirable would be, 
+as mson mentioned, where you're writing a general operation 
+that finds the top or bottom N values from arbitrary columns and it's not worth writing out the special-case operation.
+***********************************************************************************************************************
+***********************************************************************************************************************
+
+* a correlated subquery. 
+A subquery can contain a reference to an object defined in a parent statement. 
+This is called an outer reference. A subquery that contains an outer reference is called a correlated subquery. 
+Correlated subqueries cannot be evaluated independently of the outer query 
+because the subquery uses the values of the parent statement. 
+That is, the subquery is performed for each row in the parent statement. 
+Thus, results of the subquery are dependent upon the active row being evaluated in the parent statement. 
+
+SELECT article, dealer, price FROM shop s1 WHERE price=(SELECT MAX(s2.price) FROM shop s2 WHERE s1.article = s2.article);
+
+* an uncorrelated subquery. 
+A subquery that does not contain references to objects in a parent statement is called an uncorrelated subquery.
+
+SELECT s1.article, dealer, s1.price FROM shop s1
+JOIN (SELECT article, MAX(price) AS price  FROM shop  GROUP BY article) AS s2
+ON s1.article = s2.article AND s1.price = s2.price;
+
+*Using User-Defined Variables
+
+select @min_id:=min(id),@max_id:=max(id) from tbname;
+select * from tbname where id = @min_id or id = @max_id;
+
+SELECT field1_index, field2_index FROM test_table WHERE field1_index = '1' OR field2_index = '1'
+
+SELECT field1_index, field2_index FROM test_table WHERE field1_index = '1'
+UNION
+SELECT field1_index, field2_index FROM test_table WHERE field2_index = '1';
+
+* One thing to remember when using the 'union' statement (as I found out): 
+* the resulting set removes all duplicate entries unless you proceed the 'union' statement with the word 'all'.
+
+
+
+*Calculating Visits Per Day
+
+CREATE TABLE t1 (year YEAR(4), month INT(2) UNSIGNED ZEROFILL, day INT(2) UNSIGNED ZEROFILL);
+INSERT INTO t1 VALUES(2000,1,1),(2000,1,20),(2000,1,30),(2000,2,2), (2000,2,23),(2000,2,23);
+SELECT year,month,BIT_COUNT(BIT_OR(1<<day)) AS days FROM t1 GROUP BY year,month;
+
++------+-------+------+
+| year | month | days |
++------+-------+------+
+| 2000 |    01 |    3 |
+| 2000 |    02 |    2 |
++------+-------+------+
+*The query calculates how many different days appear in the table for each year/month combination, 
+*with automatic removal of duplicate entries. 
+
+How about "SELECT year, month, count(distinct day) AS days FROM t1 GROUP BY year, month;"
+
+***********************************************************************************************************************
+MyISAM Notes
+
+For MyISAM tables, you can specify AUTO_INCREMENT on a secondary column in a multiple-column index. 
+In this case, the generated value for the AUTO_INCREMENT column is calculated as 
+MAX(auto_increment_column) + 1 WHERE prefix=given-prefix. This is useful when you want to put data into ordered groups.
+
+CREATE TABLE animals (
+    grp ENUM('fish','mammal','bird') NOT NULL,
+    id MEDIUMINT NOT NULL AUTO_INCREMENT,
+    name CHAR(30) NOT NULL,
+    PRIMARY KEY (grp,id)
+) ENGINE=MyISAM;
+
+INSERT INTO animals (grp,name) VALUES
+    ('mammal','dog'),('mammal','cat'),
+    ('bird','penguin'),('fish','lax'),('mammal','whale'),
+    ('bird','ostrich');
+
+SELECT * FROM animals ORDER BY grp,id;
+Which returns:
++--------+----+---------+
+| grp    | id | name    |
++--------+----+---------+
+| fish   |  1 | lax     |
+| mammal |  1 | dog     |
+| mammal |  2 | cat     |
+| mammal |  3 | whale   |
+| bird   |  1 | penguin |
+| bird   |  2 | ostrich |
++--------+----+---------+
+
+
+***********************************************************************************************************************
+
+Using MySQL with Apache
+
+There are programs that let you authenticate your users from a MySQL database and also let you write your log files into a MySQL table.
+You can change the Apache logging format to be easily readable by MySQL by putting the following into the Apache configuration file:
+
+LogFormat \
+        "\"%h\",%{%Y%m%d%H%M%S}t,%>s,\"%b\",\"%{Content-Type}o\",  \
+        \"%U\",\"%{Referer}i\",\"%{User-Agent}i\""
+
+To load a log file in that format into MySQL, you can use a statement something like this:
+
+LOAD DATA INFILE '/local/access_log' INTO TABLE tbl_name
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\'
+
+The named table should be created to have columns that correspond to those that the LogFormat line writes to the log file. 
+
+
+
+
