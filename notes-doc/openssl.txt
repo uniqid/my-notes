@@ -1,0 +1,30 @@
+
+签根证书:
+openssl genrsa -des3 -out rootca.key 1024 
+openssl req -new -key rootca.key -out rootca.csr  -config F:\xampp\apache\bin\openssl.cnf
+openssl req -x509 -days 365 -key rootca.key  -in rootca.csr -out rootca.crt -config F:\xampp\apache\bin\openssl.cnf
+
+
+签服务端证书 :
+openssl genrsa -des3 -out server.key 1024 
+openssl rsa -in server.key -out server.key.unsecure
+openssl req -new -key server.key -out server.csr -config F:\xampp\apache\bin\openssl.cnf
+openssl ca -in server.csr -out server.crt -cert rootca.crt -keyfile rootca.key -config F:\xampp\apache\bin\openssl.cnf
+
+签客户端证书:
+openssl genrsa -des3 -out client.key 1024 
+openssl req -new -key client.key -out client.csr  -config F:\xampp\apache\bin\openssl.cnf
+
+#openssl req -new -x509 -days 365 -key client.key -out client2.csr  -config F:\xampp\apache\bin\openssl.cnf
+
+openssl ca -in client.csr -out client.crt -cert rootca.crt -keyfile rootca.key -config F:\xampp\apache\bin\openssl.cnf
+openssl pkcs12 -export -clcerts -in client.crt -inkey client.key -out client.pfx  
+
+
+Note:
+修改：openssl.cnf 的 dir
+mkdir demoCA
+mkdir demoCA/newcerts
+mkdir demoCA/private
+touch demoCA/index.txt
+echo "01" >> demoCA/serial
