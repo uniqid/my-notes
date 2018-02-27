@@ -19,7 +19,6 @@
     <' animation-fill-mode '>： 检索或设置对象动画时间之外的状态 
     <' animation-play-state '>： 检索或设置对象动画的状态。w3c正考虑是否将该属性移除，因为动画的状态可以通过其它的方式实现，比如重设样式 
 
-
 .class_name{
     background:linear-gradient([ [ <angle> | to <side-or-corner> ] ,]? <color-stop>[, <color-stop>]+);
 }

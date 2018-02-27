@@ -11,6 +11,8 @@ select year("2016-08-31"), month("2016-08-31"), day("2016-08-31");
 select mod(1,2), mod(2,2), mod(3,2), mod(4,2), mod(5,2);
 select sum(field) as f_sum, max(field) as f_max, avg(field) as f_avg from tbname;
 
+show variables;
+
 show databases;
 use  database;
 show tables;
@@ -228,7 +230,6 @@ Which returns:
 | bird   |  2 | ostrich |
 +--------+----+---------+
 
-
 ***********************************************************************************************************************
 
 Using MySQL with Apache
@@ -246,7 +247,5 @@ LOAD DATA INFILE '/local/access_log' INTO TABLE tbl_name
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\'
 
 The named table should be created to have columns that correspond to those that the LogFormat line writes to the log file. 
-
-
 
 
