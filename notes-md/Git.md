@@ -44,3 +44,54 @@ These are common Git commands used in various situations:
 	concept guides. See 'git help <command>' or 'git help <concept>'
 	to read about a specific subcommand or concept.
 
+
+
+### Demo
+
+	git add .
+	git commit -m "message"
+	git pull
+	git push
+	
+	git checkout -b dev
+	git push origin dev:dev
+	
+	git branch -vv
+	git branch -d dev
+	git push origin :dev
+	
+	git tag --list
+	git tag v1.0.0
+	git push origin v1.0.0:v1.0.0
+	git tag -d v1.0.0
+	git push origin :v1.0.0
+	
+	git checkout -- filename
+	git pull origin dev
+	
+	## Git 全局设置:
+	git config --global user.name "username"
+	git config --global user.email "email@example.com"
+
+	## 创建git仓库
+	mkdir project
+	cd project
+	git init
+	touch README.md
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://gitee.com/uniqid/project.git
+	git push -u origin master
+	
+	### 已有项目
+	cd existing_git_repo
+	git remote add origin https://gitee.com/uniqid/project.git
+	git push -u origin master
+
+	## git迁移
+	git clone --bare git://github.com/username/project.git
+	cd project.git
+	git push --mirror git@gitcafe.com/username/newproject.git
+	
+	
+
