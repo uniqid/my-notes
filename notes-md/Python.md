@@ -40,7 +40,7 @@ installation.
 	                        -OO in order to remove doc strings
 	  -c, --compress        compress byte code in zip files
 	  -s, --silent          suppress all output except warnings and errors
-	  --base-name=NAME      file on which to base the target file; if the name of
+	  --base-name=NAME      file on which to base the target file; if the name of222222
 	                        the file is not an absolute file name, the
 	                        subdirectory bases (rooted in the directory in which
 	                        the freezer is found) will be searched for a file
