@@ -94,4 +94,24 @@ These are common Git commands used in various situations:
 	git push --mirror git@gitcafe.com/username/newproject.git
 	
 	
+### 简易的命令行入门教程:
+
+#### Git 全局设置:
+	git config --global user.name "username"
+	git config --global user.email "example@email.com"
+
+#### 创建 git 仓库:
+	mkdir project
+	cd project
+	git init
+	touch README.md
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://gitee.com/path/to/project.git
+	git push -u origin master
+
+#### 已有仓库?
+	cd existing_git_repo
+	git remote add origin https://gitee.com/path/to/project.git
+	git push -u origin master
 
